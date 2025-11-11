@@ -6,6 +6,8 @@ import { Header } from '../components/Header.jsx'
 import { useQuery } from '@tanstack/react-query'
 import { getPosts } from '../api/posts.js'
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
+// import PropTypes from 'prop-types'
 
 export function Blog() {
   const [author, setAuthor] = useState('')
@@ -18,6 +20,13 @@ export function Blog() {
   const posts = postsQuery.data ?? []
   return (
     <div style={{ padding: 8 }}>
+      <Helmet>
+        <title>Full-Stack React Blog</title>
+        <meta
+          name='description'
+          content='A blog full of articles about full-stack React development.'
+        />
+      </Helmet>
       <Header />
       <br />
       <hr />
@@ -43,3 +52,6 @@ export function Blog() {
     </div>
   )
 }
+// Blog.propTypes = {
+//   initialData: PropTypes.shape(PostList.propTypes.posts),
+// }
