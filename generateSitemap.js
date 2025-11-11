@@ -1,3 +1,4 @@
+/* eslint-env node */
 import slug from 'slug'
 import dotenv from 'dotenv'
 dotenv.config()
