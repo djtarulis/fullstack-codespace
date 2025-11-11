@@ -6,7 +6,7 @@ dotenv.config()
 await initDatabase()
 const post = new Post({
   title: 'Hello from the outside!',
-  author: 'Test User',
+  author: '648a1f2b5f4c2c6d88f0e9b1', // Must be 24 char hex string
   contents: 'This post is stored in a MongoDB database using Mongoose.',
   tags: ['other'],
 })
