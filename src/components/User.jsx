@@ -2,14 +2,14 @@ import { useQuery } from '@tanstack/react-query'
 import PropTypes from 'prop-types'
 import { getUserInfo } from '../api/users.js'
 
-export function User({ id }) {
+export function User({ username }) {
   const userInfoQuery = useQuery({
-    queryKey: ['users', id],
-    queryFn: () => getUserInfo(id),
+    queryKey: ['users', username],
+    queryFn: () => getUserInfo(username),
   })
   const userInfo = userInfoQuery.data ?? {}
-  return <strong>{userInfo?.username ?? id}</strong>
+  return <strong>{userInfo?.username ?? username}</strong>
 }
 User.propTypes = {
-  id: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
 }
